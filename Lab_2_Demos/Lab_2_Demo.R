@@ -10,24 +10,28 @@
 
 
 # Question 1. # Load the `stringr` package, which you'll use later.
+
 install.packages("stringr") ##<-- if you have not installed the package 
-library("stringr")
+library("stringr")     ## <--- You always need to load the libraries 
 
 
 # Question 2: Load the data from Starbucks Data 
 # into a variable called `starbucks` rember to store strings AS factors as a false
 
-## load the data 
 
-## into a variable called starbucks 
+## Read.csv is how you will read and load in Data. It is a function which allows you to
+## csv files as code. String As factors setting it to false means that I dont want strings in the data
+## to be read factors
 
-## string as facotrs read them as false
 
 starbucks <- read.csv("Data/StarbucksData.csv", stringsAsFactors = FALSE)
 
 
 
 ## Question 3: How much  rows are in  the dataset 'num_starbucks'
+
+
+## nrow function returns the number of rows 
 num_starbucks <- nrow(starbucks)
 
 
@@ -40,11 +44,16 @@ num_starbucks <- nrow(starbucks)
 
 ## Question 4: Extract the `Calories` column into a variable called `num_calories`
 
-num_calories <- (starbucks$Calories)
+
+## Solution 1 which is to use a $ sign 
+num_calories <- (starbucks$Calories)   ## <---- this returns a vector
+
+## to view data 
+View(as.data.frame(num_calories))
 
 
-## second way to do it 
-second_way <- as.data.frame(starbucks[["Calories"]])
+## Solution 2 is to extract it as acesing an index of the array in this case the starbucks
+second_way <- as.data.frame(starbucks[["Calories"]])  ## <---- this returns a vector
 
 
 
@@ -62,7 +71,7 @@ mean_calories <- mean(num_calories, na.rm = T)
 ## And found intersting
 
 
-
+View(starbucks)
 
 
 
@@ -97,6 +106,11 @@ student_name <- no_spaces("Mo", "hamed")
 ## store this in a variable with_underscores.
 
 
+with_underscores <- function(f_name, lName){
+  return(paste(f_name, lName, sep = "_", 'Is the weirdest name I heard'))
+}
+
+
 
 
 
@@ -108,7 +122,7 @@ student_name <- no_spaces("Mo", "hamed")
 
 
 
-my_name = "abdiwahid"
+
 
 
 
@@ -118,6 +132,8 @@ my_name = "abdiwahid"
 ##Call your function with_dashes. and pass it the arguments "Cookies" as the first name 
 ## and "Table" as the second argument
 ## store this in a variable yea_dashes
+
+yea_dashes <- with_underscores("Cookies", "Table")
 
 
 
@@ -132,16 +148,10 @@ find_in_store <- c("Cookies", "Creams", "Low-fives")
 
 
 ## Question 11: Write a program which would replace all the strings in find_in_store vector with just no
-## No. 'no_vector` SO for example when you run your no vector it should return the value only no
+## No. 'no_vector` SO for example when you run your no vector it should return the value only no a one element vector.
+## user: notice - You may get a warning in the console hint this is expected.
 
-
-abdiwahid <- function(f_name, l_name){
-  if(f_name > 1){
-    return(paste("I am greater than 1"))
-  }else{
-    return(print("Im less than 1"))
-  }
-}
+no_vector <- gsub(find_in_store, "", "no")
 
 
 
