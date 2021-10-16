@@ -1,4 +1,3 @@
-
 # Question 1. # Load the `stringr` package, which you'll use later.
 library(stringr)
 
@@ -88,5 +87,4 @@ extract <- starbucks$Fat..g.
 
 getResult <- extract[extract > 10]
 
-
-
+Too_Much_Fat <- nrow(as.data.frame(getResult, na.rm = T))
