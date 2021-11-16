@@ -3,7 +3,6 @@
 ## and what will be produced and running everytime and responding to changes. etc..
 
 ## first start by setting up the libraries which you might need for plots or handling events
-
 ## Load the dplyr library
 library(dplyr)
 
