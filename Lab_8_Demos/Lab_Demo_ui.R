@@ -16,6 +16,7 @@ library(ggplot2)
 library(maps)
 
 
+
 ## To first begin a custom webpage define a variable first_page. That will represent 
 ##the first page for your shiny web page. 
 
