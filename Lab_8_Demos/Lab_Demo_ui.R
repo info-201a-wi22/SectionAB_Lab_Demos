@@ -10,9 +10,7 @@ library(shiny)
 
 ## Load the ggplot2 incase
 library(ggplot2)
-
 ##Load the maps library
-
 library(maps)
 
 
@@ -31,9 +29,10 @@ library(maps)
 ## 2.should call the p() function to be able to type pargrapghs. Type in some texts
 ## to be displayed for your webpage
 
+
 first_page <- tabPanel(
   h4("FirstPage"),
-  p("This is my first web page")
+  p("This is my first webpage Horray!!!!")
 )
 
 
@@ -65,30 +64,45 @@ first_page <- tabPanel(
 ## Do the same thing a select input but this time define it as a color input. With 
 ## an id of color_input. And choices of a few colors.
 
+## Finally inside the mainPanel. Display your chart. DO this by first 
+## giving a h3() title of plot and then calling plotOutput() function
+## passin and outputId  set to plot_output 
+
+##NOTE: ITS VERY IMPORTANT TO GIVE YOUR IDS SPECIFIC AND NAMES FOR THE SERVER TO 
+## RUN WITH IT
+
 ##When your run your app in the second page you should be 
 #3 able to view and see drop downs for colors and different starbucks features``
 
 second_page <- tabPanel(
-  h4("SecondPage"),
+  h4("Second_Page"),
   sidebarLayout(
     sidebarPanel(
       selectInput(
-        inputId = "nutrition_type",
-        label = "Starbucks Data",
+        inputId  = "nutrition_type",
+        label = "Starbucks Nutritions",
         choices = c("Fat (g)", "Carb (g)",
-                    "Fiber (g)", ("Protein (g)")),
+                  "Fiber (g)", ("Protein (g)"))
       ),
       selectInput(
         inputId = "color_input",
-        label = "Colors",
-        choices = c("Red", "Blue", "Orange", "Black",
-                    "Yellow", "Green"))
+        label = "Choose a color",
+        choices = c("Red", "Blue", "Orange", "Green", "Black", "Yellow")
+      )
     ),
-    
     mainPanel(
-      
+      h3("ScatterPlot"),
+      plotOutput(outputId = "plot_output")
     )
   )
+)
+
+
+third_page <- tabPanel(
+  h4("Page_three"),
+  p("djndfjwefwqeihhfwehjfwrhjfhrhrjf"),
+  p("djnfjewhifihwhfherhfhuerqfhqerferqfher"),
+  p("edbfnerwqhifhiewifhiierwbfrwjfnrnqhfnkhrfbhrqhf")
 )
 
 
@@ -98,8 +112,10 @@ second_page <- tabPanel(
 ## give it tags$title("Shiny") to give your webpage a title
 ## then call your first_page and second_page. You should know 
 ## be able to see your webpages rendered in the App when you run it
+
 Demo_ui <- navbarPage(
   tags$title("Shiny"),
   first_page,
-  second_page
+  second_page,
+  third_page
 )
