@@ -29,10 +29,13 @@ library(maps)
 ## 2.should call the p() function to be able to type pargrapghs. Type in some texts
 ## to be displayed for your webpage
 
+## 3. Display an image on the first page by calling the img() function.
+## The source to the image is at "https://creative.starbucks.com/images/logos/logo-1987.png"
 
 first_page <- tabPanel(
   h4("FirstPage"),
-  p("This is my first webpage Horray!!!!")
+  p("This is my first webpage Horray!!!!"),
+  img(src = "https://creative.starbucks.com/images/logos/logo-1987.png")
 )
 
 
@@ -97,7 +100,9 @@ second_page <- tabPanel(
   )
 )
 
-
+## Optionanly create a third page of your choice with any content to test your 
+## Webpage and to be able to see if you can add more pages. Dont forget
+## to render this in your ui so your page gets rendered on the webpage
 third_page <- tabPanel(
   h4("Page_three"),
   p("djndfjwefwqeihhfwehjfwrhjfhrhrjf"),
