@@ -66,7 +66,7 @@ first_page <- tabPanel(
 
 ## Finally inside the mainPanel. Display your chart. DO this by first 
 ## giving a h3() title of plot and then calling plotOutput() function
-## passin and outputId  set to plot_output 
+## passin and outputId  set to starbucks_output 
 
 ##NOTE: ITS VERY IMPORTANT TO GIVE YOUR IDS SPECIFIC AND NAMES FOR THE SERVER TO 
 ## RUN WITH IT
@@ -92,7 +92,7 @@ second_page <- tabPanel(
     ),
     mainPanel(
       h3("ScatterPlot"),
-      plotOutput(outputId = "plot_output")
+      plotOutput(outputId = "starbucks_output")
     )
   )
 )
