@@ -59,7 +59,7 @@ starbucks <- read.csv("Data/StarbucksData.csv")
 ##Optionally set labs for ggtitle
 
 Demo_server <- function(input, output){
-  output$plot_output <- renderPlot({
+  output$starbucks_output <- renderPlot({
     colnames(starbucks) <- c("Food", "Calories", "Fat (g)", "Carb (g)", "Fiber (g)", "Protein (g)")
     
     starbucks_plot <- ggplot(data = starbucks)+
