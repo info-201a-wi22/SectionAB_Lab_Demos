@@ -8,12 +8,15 @@
 ## Load the Shiny library
 library(shiny)
 
+
 ## Load the ggplot2 incase
 library(ggplot2)
+
 ##Load the maps library
 library(maps)
 
-
+##load the plotly library
+library(plotly)
 
 ## To first begin a custom webpage define a variable first_page. That will represent 
 ##the first page for your shiny web page. 
@@ -34,7 +37,8 @@ library(maps)
 
 first_page <- tabPanel(
   h4("FirstPage"),
-  p("This is my first webpage Horray!!!!"),
+  p("My very first webpage I am coding"),
+  p("I am publishing and writing my very first web page HORRAY!!!! YEYEYEYEYEY!!!"),
   img(src = "https://creative.starbucks.com/images/logos/logo-1987.png")
 )
 
@@ -68,7 +72,8 @@ first_page <- tabPanel(
 ## an id of color_input. And choices of a few colors.
 
 ## Finally inside the mainPanel. Display your chart. DO this by first 
-## giving a h3() title of plot and then calling plotOutput() function
+## giving a h3() title of Starbucks plot and then calling plotlyOutput() function to make 
+## and interactive plot be displayed to the webpage
 ## passin and outputId  set to starbucks_output 
 
 ##NOTE: ITS VERY IMPORTANT TO GIVE YOUR IDS SPECIFIC AND NAMES FOR THE SERVER TO 
@@ -78,24 +83,22 @@ first_page <- tabPanel(
 #3 able to view and see drop downs for colors and different starbucks features``
 
 second_page <- tabPanel(
-  h4("Second_Page"),
+  h4("SecondPage"),
   sidebarLayout(
     sidebarPanel(
       selectInput(
-        inputId  = "nutrition_type",
-        label = "Starbucks Nutritions",
-        choices = c("Fat (g)", "Carb (g)",
-                  "Fiber (g)", ("Protein (g)"))
-      ),
+        inputId = "nutrition_type",
+        label = "Starbucks Nutrition Types" ,
+        choices = c("Fat (g)", "Carb (g)","Fiber (g)", ("Protein (g)"))
+        ),
       selectInput(
         inputId = "color_input",
-        label = "Choose a color",
-        choices = c("Red", "Blue", "Orange", "Green", "Black", "Yellow")
+        label = "Choose a color for the graph" ,
+        choices = c("Red", "Blue", "Orange", "Green", "Black", "White", "Purple", "Brown")
       )
     ),
     mainPanel(
-      h3("ScatterPlot"),
-      plotOutput(outputId = "starbucks_output")
+      plotlyOutput(outputId = "starbucks_output")
     )
   )
 )
@@ -103,12 +106,7 @@ second_page <- tabPanel(
 ## Optionanly create a third page of your choice with any content to test your 
 ## Webpage and to be able to see if you can add more pages. Dont forget
 ## to render this in your ui so your page gets rendered on the webpage
-third_page <- tabPanel(
-  h4("Page_three"),
-  p("djndfjwefwqeihhfwehjfwrhjfhrhrjf"),
-  p("djnfjewhifihwhfherhfhuerqfhqerferqfher"),
-  p("edbfnerwqhifhiewifhiierwbfrwjfnrnqhfnkhrfbhrqhf")
-)
+
 
 
 
@@ -118,9 +116,9 @@ third_page <- tabPanel(
 ## then call your first_page and second_page. You should know 
 ## be able to see your webpages rendered in the App when you run it
 
+
 Demo_ui <- navbarPage(
   tags$title("Shiny"),
   first_page,
-  second_page,
-  third_page
+  second_page
 )
