@@ -34,9 +34,11 @@ starbucks <- read.csv("Data/StarbucksData.csv", stringsAsFactors = FALSE)
 ##1. Inside the server do the following create an output to render a ggplot. Name this
 ## starbucks_output
 
-## 2. Render a renderPlotly for your plot. By calling renderPlot function()
+## 2. Render a Plotly for your plot. By calling renderPlotly function()
 
-## 3. Inside the renderPlot Change the columns in the starbucks data to be the following
+## Plotly will make your graph interactive for the user as compared to simply doing Plot
+
+## 3. Inside the renderPlotly Change the columns in the starbucks data to be the following
 ## "Food", "Calories", "Fat (g)", "Carb (g)", "Fiber (g)", "Protein (g)"
 
 
