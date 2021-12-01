@@ -107,6 +107,11 @@ second_page <- tabPanel(
 ## Webpage and to be able to see if you can add more pages. Dont forget
 ## to render this in your ui so your page gets rendered on the webpage
 
+third_page <- tabPanel(
+  h4("Third_Page"),
+  p("This is the third page test")
+  
+  )
 
 
 
