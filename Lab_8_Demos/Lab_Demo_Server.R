@@ -67,3 +67,16 @@ Demo_server <- function(input, output){
     starbucks_plot
   })
 }
+
+##---Second solution show in todays demo
+
+##Demo_server <- function(input, output){
+##  output$starbucks_output <- renderPlotly({
+  ##  colnames(starbucks) <- c("Food", "Calories", "Fat (g)", "Carb (g)", "Fiber (g)", "Protein (g)")
+ ##   starbucks_plot <- ggplot(data = starbucks)+
+  ##    geom_line(mapping = aes(x = `Calories`, y = .data[[input$nutrition_type]]), 
+        ##        color = input$color_input)
+    
+  ##  return(starbucks_plot)
+ ## })
+##}
