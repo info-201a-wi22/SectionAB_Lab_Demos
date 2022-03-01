@@ -57,6 +57,8 @@ starbucks <- read.csv("Data/StarbucksData.csv", stringsAsFactors = FALSE)
 ##Optionally set labs for ggtitle
 
 
+one_plus_one <- 1 + 1
+
 Demo_server <- function(input, output){
   output$starbucks_output <- renderPlotly({
     colnames(starbucks) <- c("Food", "Calories", "Fat (g)", "Carb (g)", "Fiber (g)", "Protein (g)")
@@ -80,4 +82,16 @@ Demo_server <- function(input, output){
     
   ##  return(starbucks_plot)
  ## })
+##}
+
+## solution 3 shown in 2/28/2022 lab demo
+##Demo_server <- function(input, output){
+##  output$starbucks_output <- renderPlotly({
+##    colnames(starbucks) <- c("Food", "Calories", "Fat (g)", "Carb (g)", "Fiber (g)", "Protein (g)")
+##    starbucks_plot <- ggplot(data = starbucks)+
+ ##     geom_line(mapping = aes(x = `Calories`, y = !!as.name(input$nutrition_type)), 
+  ##              color = input$color_input)
+    
+##    starbucks_plot
+##  })
 ##}
