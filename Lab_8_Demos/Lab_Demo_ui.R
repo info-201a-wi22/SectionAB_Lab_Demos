@@ -17,7 +17,9 @@ library(maps)
 
 ##load the plotly library
 library(plotly)
+## source the Lab_Demo_Server.R
 
+source("Lab_Demo_Server.R")
 ## To first begin a custom webpage define a variable first_page. That will represent 
 ##the first page for your shiny web page. 
 
@@ -39,7 +41,7 @@ first_page <- tabPanel(
   h4("FirstPage"),
   p("My very first webpage I am coding"),
   p("I am publishing and writing my very first web page HORRAY!!!! YEYEYEYEYEY!!!"),
-  p("One plus one is equal = ", one_plus_one)
+  p("One plus one is equal = ", one_plus_one),
   img(src = "https://creative.starbucks.com/images/logos/logo-1987.png")
 )
 
