@@ -1,4 +1,4 @@
-## This is the server file where 
+### This is the server file where 
 ## you will respond to user events and changes do something based on input
 ## and what will be produced and running everytime and responding to changes. etc..
 
@@ -15,8 +15,6 @@ library(ggplot2)
 library(maps)
 ##load the mapproj library
 library(mapproj)
-## source the Lab_Demo_ui.R
-source("Lab_Demo_ui.R")
 
 ## load the plotly library
 library(plotly)
@@ -61,28 +59,28 @@ one_plus_one <- 1 + 1
 
 Demo_server <- function(input, output){
   output$starbucks_output <- renderPlotly({
-    colnames(starbucks) <- c("Food", "Calories", "Fat (g)", "Carb (g)", "Fiber (g)", "Protein (g)")
-    starbucks_plot <- ggplot(data = starbucks)+
-      geom_line(mapping = aes(x = `Calories`, y = starbucks[[input$nutrition_type]]), 
-                color = input$color_input)
+      colnames(starbucks) <- c("Food", "Calories", "Fat (g)", "Carb (g)", "Fiber (g)", "Protein (g)")
+       starbucks_plot <- ggplot(data = starbucks)+
+        geom_line(mapping = aes(x = `Calories`, y = .data[[input$nutrition_type]]), 
+           color = input$color_input) +
+    labs(x = "Calories", y = input$nutrition_type)
     
-    starbucks_plot
-  })
+      return(starbucks_plot)
+     })
 }
 
 ##---Second solution shown in todays demo
 
-##Demo_server <- function(input, output){
-##  output$starbucks_output <- renderPlotly({
-  ##  colnames(starbucks) <- c("Food", "Calories", "Fat (g)", "Carb (g)", "Fiber (g)", "Protein (g)")
- ##   starbucks_plot <- ggplot(data = starbucks)+
-  ##    geom_line(mapping = aes(x = `Calories`, y = .data[[input$nutrition_type]]), 
-        ##        color = input$color_input) +
-    ##  labs(x = "Calories", y = input$nutrition_type)
-    
-  ##  return(starbucks_plot)
- ## })
-##}
+
+#output$starbucks_output <- renderPlotly({
+#  colnames(starbucks) <- c("Food", "Calories", "Fat (g)", "Carb (g)", "Fiber (g)", "Protein (g)")
+#  starbucks_plot <- ggplot(data = starbucks)+
+ #   geom_line(mapping = aes(x = `Calories`, y = starbucks[[input$nutrition_type]]), 
+ #             color = input$color_input)
+  
+ # starbucks_plot
+#})
+
 
 ## solution 3 shown in 2/28/2022 lab demo
 ##Demo_server <- function(input, output){
